@@ -20,7 +20,12 @@
     </style>
 
     <!-- splash theme for android 12 and upper.  -->
-    <style name="AppThemeSplash" parent="AppThemeFullScreen">
+    <style name="AppThemeSplash" parent="AppThemeFullScreen"/>
 
+    <!-- tabLayout theme for change the text size.  -->
+    <style name="MyTabLayoutTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/colorPrimaryGray</item>
     </style>
+
 </resources>
