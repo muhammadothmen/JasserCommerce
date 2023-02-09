@@ -1,8 +1,9 @@
 <resources>
     <string name="app_name">دليل الجاسر العقاري</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="tab_offers">المعروض</string>
     <string name="tab_demands">المطلوب</string>
     <string name="tab_history">السجل</string>
+    <string name="nav_my_profile">حسابي</string>
+    <string name="nav_sign_out">تسجيل الخروج</string>
+    <string name="nav_sign_in">تسجيل الدخول</string>
 </resources>
