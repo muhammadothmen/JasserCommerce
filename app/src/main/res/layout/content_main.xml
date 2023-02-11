@@ -35,15 +35,35 @@
             app:tabSelectedTextColor="@color/colorPrimaryCreamy"
             app:tabIndicatorColor="@color/colorPrimaryCreamy"
             app:tabTextAppearance="@style/MyTabLayoutTextAppearance"
+            android:contentDescription="@string/tabLayout_contentDescription"
             />
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/viewPager"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        />
+        >
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_add_estate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:contentDescription="@string/fab_add_estate_contentDescription"
+            android:layout_margin="16dp"
+            android:backgroundTint="@color/colorPrimary"
+            app:srcCompat="@drawable/ic_add" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
 
 
 </LinearLayout>

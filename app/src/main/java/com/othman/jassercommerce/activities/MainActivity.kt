@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewTreeObserver
 import android.widget.Toast
 import androidx.core.view.GravityCompat
+import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.tabs.TabLayoutMediator
 import com.othman.jassercommerce.R
@@ -29,9 +30,14 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         setupActionBar()
 
         setupTabsAdapter()
-        
+
+
         nav_view.setNavigationItemSelectedListener(this)
 
+        fab_add_estate.setOnClickListener {
+            //Todo implement add estate
+            Toast.makeText(this@MainActivity,"fab test",Toast.LENGTH_SHORT).show()
+        }
     }
 
 
@@ -66,6 +72,32 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             tab.text = tabsPagerAdapter.getTabTitle(position)
         }.attach()
+        viewPager.registerOnPageChangeCallback(object: ViewPager2.OnPageChangeCallback(){
+            override fun onPageSelected(position: Int) {
+                super.onPageSelected(position)
+                if (position == 2){
+                    fab_add_estate.hide()
+                    //fab_add_estate.visibility = View.INVISIBLE
+                }else{
+                    fab_add_estate.show()
+                    //fab_add_estate.visibility = View.VISIBLE
+                }
+            }
+
+             /*override fun onPageScrollStateChanged(state: Int) {
+                 super.onPageScrollStateChanged(state)
+                 Toast.makeText(this@MainActivity,"onPageScrollStateChangedTest",Toast.LENGTH_SHORT).show()
+             }
+
+             override fun onPageScrolled(
+                 position: Int,
+                 positionOffset: Float,
+                 positionOffsetPixels: Int
+             ) {
+                 super.onPageScrolled(position, positionOffset, positionOffsetPixels)
+                 Toast.makeText(this@MainActivity,"onPageScrolledTest",Toast.LENGTH_SHORT).show()
+             }*/
+        })
     }
 
     /**
@@ -116,5 +148,6 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
     }
+
 
 }

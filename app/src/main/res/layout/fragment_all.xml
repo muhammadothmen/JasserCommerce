@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layoutDirection="rtl"
+    android:background="@color/colorPrimaryCreamy"
+    >
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_estate"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/item_estate"
+        android:visibility="gone"
+        />
+
+    <TextView
+        android:id="@+id/tv_no_estates"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/no_estates"
+        android:gravity="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/no_estates_text_size"
+        />
+
+</LinearLayout>
+
+
+
+
+

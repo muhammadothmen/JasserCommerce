@@ -6,4 +6,9 @@
     <string name="nav_my_profile">حسابي</string>
     <string name="nav_sign_out">تسجيل الخروج</string>
     <string name="nav_sign_in">تسجيل الدخول</string>
+    <string name="image_contentDescription">image</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fab_add_estate_contentDescription">add estate</string>
+    <string name="tabLayout_contentDescription">list type</string>
+    <string name="no_estates">لا يوجد عقارات لعرضها</string>
 </resources>

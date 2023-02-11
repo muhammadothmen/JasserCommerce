@@ -4,11 +4,11 @@ import android.net.Uri
 import java.util.ArrayList
 
 data class Estate(
-    var id: Int,
+   /* var id: Int,*/
     val type: String?,       // ex: house
-    val deal: Int,           // ex: offer
+    /*val deal: Int,*/           // ex: offer
     val contract: String?,   // ex: sale
-    val location: String?,
+    /*val location: String?,
     val area: Int,
     val rooms: String?,
     val direction: String?,
@@ -25,5 +25,5 @@ data class Estate(
     val owner: String?,
     val ownerTel: String?,
     var completed: Boolean,
-    val images: ArrayList<Uri>?
+    val images: ArrayList<Uri>?*/
 )
