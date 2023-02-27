@@ -1,5 +1,6 @@
 package com.othman.jassercommerce.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
@@ -35,8 +36,9 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         nav_view.setNavigationItemSelectedListener(this)
 
         fab_add_estate.setOnClickListener {
-            //Todo implement add estate
-            Toast.makeText(this@MainActivity,"fab test",Toast.LENGTH_SHORT).show()
+            val addEstateIntent = Intent(this@MainActivity,AddEstateActivity::class.java)
+            //todo add data to addEstateIntent
+            startActivity(addEstateIntent)
         }
     }
 
@@ -77,10 +79,8 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
                 super.onPageSelected(position)
                 if (position == 2){
                     fab_add_estate.hide()
-                    //fab_add_estate.visibility = View.INVISIBLE
                 }else{
                     fab_add_estate.show()
-                    //fab_add_estate.visibility = View.VISIBLE
                 }
             }
 

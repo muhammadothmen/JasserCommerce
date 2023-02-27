@@ -18,17 +18,15 @@ open class BaseActivity : AppCompatActivity() {
      * @param title the title of action bar.
      * @param backButtonEnable if true then the back button will implementing
      */
-    fun setupActionBar(toolbar :Toolbar, title: String, backButtonEnable: Boolean) {
+    fun setupActionBar(toolbar :Toolbar, title: String) {
 
         setSupportActionBar(toolbar)
         val actionBar = supportActionBar
         if (actionBar != null) {
-            if (backButtonEnable){
-                actionBar.setDisplayHomeAsUpEnabled(true)
-                actionBar.setHomeAsUpIndicator(R.drawable.ic_back_icon)
-                toolbar.setNavigationOnClickListener { onBackPressedDispatcher.onBackPressed() }
-            }
             actionBar.title = title
+            actionBar.setDisplayHomeAsUpEnabled(true)
+            actionBar.setHomeAsUpIndicator(R.drawable.ic_back_icon)
+            toolbar.setNavigationOnClickListener { onBackPressedDispatcher.onBackPressed() }
         }
     }
 

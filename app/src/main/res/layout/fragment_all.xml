@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layoutDirection="rtl"
-    android:background="@color/colorPrimaryCreamy"
+    android:background="@color/colorCreamy"
     >
 
     <androidx.recyclerview.widget.RecyclerView

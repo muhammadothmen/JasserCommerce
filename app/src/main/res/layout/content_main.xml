@@ -21,7 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/colorPrimary"
-            app:titleTextColor="@color/colorPrimaryCreamy"
+            app:titleTextColor="@color/colorCreamy"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
         <com.google.android.material.tabs.TabLayout
@@ -31,9 +31,9 @@
             android:background="@color/colorPrimary"
             app:tabGravity="fill"
             app:tabMode="fixed"
-            app:tabTextColor="@color/colorPrimaryGray"
-            app:tabSelectedTextColor="@color/colorPrimaryCreamy"
-            app:tabIndicatorColor="@color/colorPrimaryCreamy"
+            app:tabTextColor="@color/colorSky"
+            app:tabSelectedTextColor="@color/colorCreamy"
+            app:tabIndicatorColor="@color/colorCreamy"
             app:tabTextAppearance="@style/MyTabLayoutTextAppearance"
             android:contentDescription="@string/tabLayout_contentDescription"
             />
@@ -58,8 +58,11 @@
             android:layout_gravity="bottom|end"
             android:contentDescription="@string/fab_add_estate_contentDescription"
             android:layout_margin="16dp"
-            android:backgroundTint="@color/colorPrimary"
-            app:srcCompat="@drawable/ic_add" />
+            android:backgroundTint="@color/colorRed"
+            app:srcCompat="@drawable/ic_add"
+            app:tint="@color/colorCreamy"
+            app:borderWidth="0dp"
+            />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

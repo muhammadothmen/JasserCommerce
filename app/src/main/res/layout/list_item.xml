@@ -1,0 +1,13 @@
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tv_option"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="@dimen/options_text_padding_horizontal"
+    android:paddingVertical="@dimen/options_text_padding_vertical"
+    android:textColor="@color/colorNavy"
+    android:ellipsize="end"
+    android:maxLines="1"
+    android:textSize="@dimen/add_estate_content_text_size"
+    android:textAppearance="?attr/textAppearanceSubtitle1"
+    />

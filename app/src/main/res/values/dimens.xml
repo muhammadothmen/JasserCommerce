@@ -17,5 +17,17 @@
     <dimen name="item_estate_divider_height">0.3dp</dimen>
     <dimen name="item_estate_divider_marginTop">5dp</dimen>
     <dimen name="item_estate_text_secondary_text_marginTop">5dp</dimen>
-    <dimen name="no_estates_text_size">16dp</dimen>
+    <dimen name="no_estates_text_size">16sp</dimen>
+    <dimen name="add_estate_content_padding">10dp</dimen>
+    <dimen name="add_estate_edit_text_marginTop">5dp</dimen>
+    <dimen name="add_estate_title_text_marginTop">10dp</dimen>
+    <dimen name="add_estate_content_text_size">18sp</dimen>
+    <dimen name="options_text_padding_horizontal">16dp</dimen>
+    <dimen name="options_text_padding_vertical">10dp</dimen>
+    <dimen name="dialog_corner">5dp</dimen>
+    <dimen name="line_thickness">0.5dp</dimen>
+    <dimen name="dialog_slider_button_width">36dp</dimen>
+    <dimen name="dialog_slider_button_icon_padding">1dp</dimen>
+    <dimen name="dialog_slider_marginTop">10dp</dimen>
+    <dimen name="delete_btn_size">50dp</dimen>
 </resources>

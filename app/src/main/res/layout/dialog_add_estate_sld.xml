@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:cardCornerRadius="@dimen/dialog_corner"
+    app:cardElevation="@dimen/dialog_corner"
+    android:layoutDirection="rtl"
+    android:backgroundTint="@color/colorCreamy"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/add_estate_content_padding">
+
+        <TextView
+            android:id="@+id/tv_dialog_sld_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/add_estate_content_padding"
+            android:textColor="@color/colorNavy"
+            android:textSize="@dimen/add_estate_content_text_size"
+            android:textStyle="bold"
+            android:visibility="visible"
+            android:text="@string/dialog_title_area" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_thickness"
+            android:background="@color/colorGrayLight" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:id="@+id/btn_dialog_slider_minus"
+            android:layout_width="@dimen/dialog_slider_button_width"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/ic_minus"
+            app:iconGravity = "textEnd"
+            app:iconPadding = "@dimen/dialog_slider_button_icon_padding"
+            app:iconTint = "@color/colorPrimaryDark"
+            android:layout_gravity="bottom"
+            app:strokeColor = "@color/colorLightBlack"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/sld_area_dialog"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="@dimen/dialog_slider_marginTop"
+            android:value="50"
+            android:valueFrom="1.0"
+            android:valueTo="1000.0"
+            android:stepSize = "1.0"
+            app:labelBehavior = "visible"
+            android:contentDescription="@string/slider_description"
+            />
+
+        <Button
+            android:id="@+id/btn_dialog_slider_plus"
+            android:layout_width="@dimen/dialog_slider_button_width"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:icon="@drawable/ic_plus"
+            app:iconGravity = "textEnd"
+            app:iconTint = "@color/colorPrimaryDark"
+            app:iconPadding = "@dimen/dialog_slider_button_icon_padding"
+            app:strokeColor = "@color/colorLightBlack"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_dialog_price_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:baselineAligned="false"
+        >
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="2dp"
+            android:layout_marginTop="@dimen/add_estate_edit_text_marginTop"
+            app:endIconMode="dropdown_menu"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+
+            <AutoCompleteTextView
+                android:id="@+id/et_dialog_price_unit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="@dimen/add_estate_edit_text_marginTop"
+            app:endIconMode="dropdown_menu"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+
+            <AutoCompleteTextView
+                android:id="@+id/et_dialog_price_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+        <Button
+            android:id="@+id/btn_dialog_sld_done"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:icon="@drawable/ic_done"
+            app:iconGravity = "textStart"
+            app:iconTint = "@color/colorGreen"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            />
+
+        <Button
+            android:id="@+id/btn_dialog_sldr_cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:icon="@drawable/ic_cancel"
+            app:iconGravity = "textStart"
+            app:iconTint = "@color/colorRed"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            tools:ignore="VisualLintButtonSize"
+            />
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+    </androidx.cardview.widget.CardView>

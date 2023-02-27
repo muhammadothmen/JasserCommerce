@@ -8,11 +8,24 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="colorPrimary">#4b86b4</color>
+    <color name="colorNavy">#23233b</color>
     <color name="colorPrimaryDark">#2a4d69</color>
-    <color name="colorPrimaryGray">#adcbe3</color>
-    <color name="colorPrimaryCreamy">#e7eff6</color>
-    <color name="colorPrimaryBlue">#63ace5</color>
+    <color name="colorPrimary">#4b86b4</color>
+    <color name="colorBlue">#63ace5</color>
+    <color name="colorSky">#d2e7ff</color>
+    <color name="colorSkyLight">#e7eff6</color>
+    <color name="colorGrayDark">#b2b0b0</color>
+    <color name="colorGrayLight">#c5c6c6</color>
+    <color name="colorCreamy">#fffef9</color>
+    <color name="colorYellow">#ffefd7</color>
+    <color name="colorLightBlack">#60000000</color>
+
+
+    <color name="colorGreen">#a5f33d</color>
+    <color name="colorOrange">#ffbe4f</color>
+    <color name="colorRed">#de6c83</color>
+    <color name="colorLilac">#000080</color>
+
 
 
 </resources>

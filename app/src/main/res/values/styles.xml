@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="colorPrimary">@color/colorPrimary</item>
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light">
+        <item name="colorPrimary">@color/colorBlue</item>
         <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorBlue</item>
     </style>
 
     <!-- no action bar application theme. -->
@@ -25,7 +26,14 @@
     <!-- tabLayout theme for change the text size.  -->
     <style name="MyTabLayoutTextAppearance" parent="TextAppearance.Design.Tab">
         <item name="android:textSize">18sp</item>
-        <item name="android:textColor">@color/colorPrimaryGray</item>
+        <item name="android:textColor">@color/colorGrayLight</item>
     </style>
+
+    <style name="Dialog_Theme" parent="ThemeOverlay.MaterialComponents.Dialog">
+        <item name="android:windowMinWidthMajor">85%</item>
+        <item name="android:windowMinWidthMinor">85%</item>
+    </style>
+
+
 
 </resources>

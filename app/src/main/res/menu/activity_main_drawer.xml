@@ -1,19 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <group >
+    <group
+        android:id="@+id/estates_group"
+        >
         <item
-            android:id="@+id/nav_my_profile"
+            android:id="@+id/nav_offers"
             android:icon="@drawable/ic_nav_my_profile"
             android:title="@string/nav_my_profile" />
 
         <item
-            android:id="@+id/nav_my_sign_in"
+            android:id="@+id/nav_demands"
             android:icon="@drawable/ic_nav_sign_in"
             android:title="@string/nav_sign_in" />
 
         <item
-            android:id="@+id/nav_sign_out"
+            android:id="@+id/nav_filter"
             android:icon="@drawable/ic_nav_sign_out"
             android:title="@string/nav_sign_out" />
+    </group>
+
+    <group
+        android:id="@+id/account_group"
+        >
+        <item
+            android:id="@+id/subtitle"
+            android:title="الحساب">
+            <menu>
+                <item
+                    android:id="@+id/nav_my_profile"
+                    android:icon="@drawable/ic_nav_my_profile"
+                    android:title="@string/nav_my_profile" />
+
+                <item
+                    android:id="@+id/nav_my_sign_in"
+                    android:icon="@drawable/ic_nav_sign_in"
+                    android:title="@string/nav_sign_in" />
+
+                <item
+                    android:id="@+id/nav_sign_out"
+                    android:icon="@drawable/ic_nav_sign_out"
+                    android:title="@string/nav_sign_out" />
+            </menu>
+        </item>
+
     </group>
 </menu>
