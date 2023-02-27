@@ -21,7 +21,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
-class AddEstateActivity : BaseActivity(), View.OnClickListener {
+class AddEstateActivity : BaseActivity(), OnClickListener {
 
 
     private var calendar = Calendar.getInstance()

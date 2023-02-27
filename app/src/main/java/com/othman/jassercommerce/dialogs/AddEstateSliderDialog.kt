@@ -156,7 +156,6 @@ abstract class AddEstateSliderDialog(context: Context, private var type: String)
         if (btn == btn_dialog_slider_plus && sld_area_dialog.value < sld_area_dialog.valueTo) {
             sld_area_dialog.value = (sld_area_dialog.value + sld_area_dialog.stepSize).correct()
         } else if (btn == btn_dialog_slider_minus && sld_area_dialog.value > sld_area_dialog.valueFrom) {
-            val value = sld_area_dialog.value - sld_area_dialog.stepSize
             sld_area_dialog.value = (sld_area_dialog.value - sld_area_dialog.stepSize).correct()
         }
     }
