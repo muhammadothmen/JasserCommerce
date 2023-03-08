@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:cardCornerRadius="@dimen/dialog_corner"
+    app:cardElevation="@dimen/dialog_corner"
+    android:layoutDirection="rtl"
+    android:backgroundTint="@color/colorCreamy"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/add_estate_content_padding">
+
+        <TextView
+            android:id="@+id/tv_dialog_image_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:padding="@dimen/add_estate_content_padding"
+            android:text="@string/image_dialog_title"
+            android:textColor="@color/colorNavy"
+            android:textSize="@dimen/add_estate_content_text_size"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_thickness"
+            android:background="@color/colorGrayLight" />
+
+
+        <Button
+            android:id="@+id/btn_dialog_image_gallery"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/ic_gallery"
+            android:gravity="start"
+            app:iconGravity = "textStart"
+            app:iconTint = "@color/colorBlue"
+            app:iconPadding = "@dimen/add_estate_content_padding"
+            android:layout_gravity="start"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:text="@string/image_dialog_gallery"
+            android:textColor="@color/colorNavy"
+            android:textSize="@dimen/add_estate_content_text_size"
+            android:padding="@dimen/add_estate_content_padding"
+
+            />
+
+
+
+        <Button
+            android:id="@+id/btn_dialog_image_camera"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            app:icon="@drawable/ic_camera"
+            app:iconGravity = "textStart"
+            app:iconTint = "@color/colorBlue"
+            app:iconPadding = "@dimen/add_estate_content_padding"
+            android:layout_gravity="start"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:text="@string/image_dialog_camera"
+            android:textColor="@color/colorNavy"
+            android:textSize="@dimen/add_estate_content_text_size"
+            android:padding="@dimen/add_estate_content_padding"
+
+            />
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

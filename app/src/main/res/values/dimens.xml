@@ -30,4 +30,5 @@
     <dimen name="dialog_slider_button_icon_padding">1dp</dimen>
     <dimen name="dialog_slider_marginTop">10dp</dimen>
     <dimen name="delete_btn_size">50dp</dimen>
+    <dimen name="add_estate_image_height">270dp</dimen>
 </resources>

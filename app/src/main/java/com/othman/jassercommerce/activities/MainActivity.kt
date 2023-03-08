@@ -2,10 +2,13 @@ package com.othman.jassercommerce.activities
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewTreeObserver
 import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.view.GravityCompat
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.navigation.NavigationView
@@ -15,11 +18,18 @@ import com.othman.jassercommerce.adapters.TabsPagerAdapter
 import com.othman.jassercommerce.fragments.DemandsFragment
 import com.othman.jassercommerce.fragments.HistoryFragment
 import com.othman.jassercommerce.fragments.OffersFragment
+import com.othman.jassercommerce.utils.Constants
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
 
 
 class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener {
+
+    private lateinit var  openAddEstateActivity: ActivityResultLauncher<Intent>
+    private val offersFragment = OffersFragment()
+    private val demandsFragment = DemandsFragment()
+    private val historyFragment = HistoryFragment()
+    private var deal = Constants.OFFER
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,14 +42,29 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
 
         setupTabsAdapter()
 
+        addEstateLauncherSetup()
 
         nav_view.setNavigationItemSelectedListener(this)
 
         fab_add_estate.setOnClickListener {
             val addEstateIntent = Intent(this@MainActivity,AddEstateActivity::class.java)
-            //todo add data to addEstateIntent
-            startActivity(addEstateIntent)
+            addEstateIntent.putExtra(Constants.DEAL_INTENT, deal)
+            openAddEstateActivity.launch(addEstateIntent)
         }
+    }
+
+    private fun addEstateLauncherSetup() {
+        openAddEstateActivity = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){ result ->
+                if (result.resultCode == RESULT_OK ) {
+                    if(deal == Constants.OFFER){
+                        offersFragment.getHappyPlacesListFromLocalDB()
+                    }else{
+                        demandsFragment.getHappyPlacesListFromLocalDB()
+                    }
+                }else {
+                    Log.e("Activity","canceled or back pressed")
+                }
+            }
     }
 
 
@@ -64,9 +89,9 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
     private fun setupTabsAdapter() {
         val tabsPagerAdapter = TabsPagerAdapter(this)
         // add fragment to the list
-        tabsPagerAdapter.addFragment(OffersFragment(), resources.getString(R.string.tab_offers))
-        tabsPagerAdapter.addFragment(DemandsFragment(), resources.getString(R.string.tab_demands))
-        tabsPagerAdapter.addFragment(HistoryFragment(), resources.getString(R.string.tab_history))
+        tabsPagerAdapter.addFragment(offersFragment, resources.getString(R.string.tab_offers))
+        tabsPagerAdapter.addFragment(demandsFragment, resources.getString(R.string.tab_demands))
+        tabsPagerAdapter.addFragment(historyFragment, resources.getString(R.string.tab_history))
         // Adding the Adapter to the ViewPager
         viewPager.adapter = tabsPagerAdapter
         viewPager.currentItem = 0
@@ -77,11 +102,21 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         viewPager.registerOnPageChangeCallback(object: ViewPager2.OnPageChangeCallback(){
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
-                if (position == 2){
-                    fab_add_estate.hide()
-                }else{
-                    fab_add_estate.show()
+                when(tabsPagerAdapter.getTabTitle(position)){
+                    resources.getString(R.string.tab_offers) -> {
+                        fab_add_estate.show()
+                        deal = Constants.OFFER
+                    }
+                    resources.getString(R.string.tab_demands) -> {
+                        fab_add_estate.show()
+                        deal = Constants.DEMAND
+                    }
+                    resources.getString(R.string.tab_history) -> {
+                        fab_add_estate.hide()
+                        deal = Constants.HISTORY
+                    }
                 }
+
             }
 
              /*override fun onPageScrollStateChanged(state: Int) {

@@ -7,7 +7,9 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.othman.jassercommerce.R
 import com.othman.jassercommerce.adapters.EstateItemsAdapter
+import com.othman.jassercommerce.databases.LocalDatabaseHandler
 import com.othman.jassercommerce.models.Estate
+import com.othman.jassercommerce.models.EstateModel
 import kotlinx.android.synthetic.main.fragment_all.*
 
 
@@ -15,27 +17,33 @@ class HistoryFragment : Fragment(R.layout.fragment_all) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //recycleViewSetup()
+        getHappyPlacesListFromLocalDB()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        getHappyPlacesListFromLocalDB()
+    }
+    private fun getHappyPlacesListFromLocalDB(){
+        val dbHandler = LocalDatabaseHandler(activity)
+        val estatesList  = dbHandler.getEstatesList()
+
+        if (estatesList.size > 0) {
+            rv_estate.visibility = View.VISIBLE
+            tv_no_estates.visibility = View.GONE
+            recycleViewSetup(estatesList)
+        } else {
+            rv_estate.visibility = View.GONE
+            tv_no_estates.visibility = View.VISIBLE
+        }
     }
 
 
-    private fun recycleViewSetup(){
-        val list = arrayListOf(Estate("بيت","بيع"),
-            Estate("مزرعة","اجار"),
-            Estate("فيلا","رهنية"),
-            Estate("بيت","بيع"),
-            Estate("مزرعة","اجار"),
-            Estate("فيلا","رهنية"),
-            Estate("بيت","بيع"),
-            Estate("مزرعة","اجار"),
-            Estate("فيلا","رهنية"),
-            Estate("بيت","بيع"),
-            Estate("مزرعة","اجار"),
-            Estate("فيلا","رهنية")
-        )
+    private fun recycleViewSetup(estateList: ArrayList<EstateModel>){
+
         tv_no_estates.visibility = View.INVISIBLE
         rv_estate.visibility = View.VISIBLE
-        val adapter = EstateItemsAdapter(activity,list)
+        val adapter = EstateItemsAdapter(activity,estateList)
         rv_estate.layoutManager = LinearLayoutManager(activity)
         rv_estate.setHasFixedSize(true)
         rv_estate.adapter = adapter

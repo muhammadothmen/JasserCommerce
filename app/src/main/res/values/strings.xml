@@ -51,4 +51,7 @@
     <string name="hint_renter_standards">معايير المؤجر</string>
     <string name="dialog_title">أدخل</string>
     <string name="dialog_hint_logger">اسم المكتب أو المندوب</string>
+    <string name="image_dialog_title">إضافة صورة</string>
+    <string name="image_dialog_gallery">المعرض</string>
+    <string name="image_dialog_camera">الكاميرا</string>
 </resources>

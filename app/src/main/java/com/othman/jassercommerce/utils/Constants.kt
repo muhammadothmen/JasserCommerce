@@ -1,7 +1,13 @@
 package com.othman.jassercommerce.utils
 
+import android.util.Log
+
 object Constants {
 
+
+    const val IMAGES_PERMISSION_REQUEST_CODE = 1
+    const val DEAL_INTENT = "deal"
+    const val ESTATE_DETAILS_INTENT = "estateDetails"
     private const val NULL = "غير محدد"
     const val AREA_UNIT = "متر مربع"
 
@@ -19,6 +25,13 @@ object Constants {
     const val RENT = "آجار"
     const val BET = "رهنية"
     const val BUY = "شراء"
+
+    // deals
+
+    const val OFFER = "معروض"
+    const val DEMAND = "مطلوب"
+    const val HISTORY = "السجل"
+
 
     //dialog types
     const val AREA_DIALOG_TYPE = "area_dialog"
@@ -196,4 +209,8 @@ object Constants {
     private const val OTHER_STANDARDS  = "معايير أخرى"
     val renterStandardsOptions = arrayListOf(NULL, GROOMS_ONLY, FEMALE_STUDENTS, CHILDREN_LESS_FAMILY,
     SMALL_FAMILY, OTHER_STANDARDS)
+
+    fun log(message: Any){
+        Log.e("JC", message.toString())
+    }
 }
